@@ -1,0 +1,55 @@
+@charset "UTF-8"
+
+    /* font-family: 'choisie', 'sans-serif'; */
+
+body, html {
+        padding 0;
+        margin 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+
+/* header */
+.header{
+    background-color: #16434B;
+    height: 60px;
+    line-height: 60px;
+}
+
+.logo {
+    color: aliceblue;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    float: left;
+}
+
+.menu {
+    float: right;
+    
+}
+
+.menu a {
+    color: aliceblue;
+    margin-right: 20px;
+}
+
+.menu a:hover {
+    color: #E94858;
+}
+
+/* banner */
+
+
+/* about */
+
+
+/* footer/join */
