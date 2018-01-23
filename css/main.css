@@ -1,6 +1,13 @@
 @charset "UTF-8"
 
     /* font-family: 'choisie', 'sans-serif'; */
+    /* couleur du site
+    bleu foncé  #16434B
+    bleu clair  #3CB4CB
+    vert        #82BF6E
+    jaune       #F3A32A
+    rouge       #ff3333
+    */
 
 body, html {
         padding 0;
@@ -15,17 +22,19 @@ a:hover {
     text-decoration: none;
 }
 
-
+.container-fluid {
+    padding: 0;
+}
 
 /* header */
 .header{
-    background-color: #16434B;
+    background-color: #3CB4CB;
     height: 60px;
     line-height: 60px;
 }
 
 .logo {
-    color: aliceblue;
+    color: #ffffff;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
@@ -38,18 +47,90 @@ a:hover {
 }
 
 .menu a {
-    color: aliceblue;
+    color: #ffffff;
     margin-right: 20px;
 }
 
 .menu a:hover {
-    color: #E94858;
+    color: #ff3333;
 }
 
 /* banner */
+.banner {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+}
 
+.ban {
+    height: 300px; 
+    background-color: #16434B;
+}
+.ban img {
+    width: 100%;
+    max-width: 100%;
+    position: inherit;
+}
 
+.inner-banner {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.inner-banner h1 {
+    color: #ffffff;
+    font-size: 32px;
+    text-shadow: 1px 1px 20px #000000;
+}
+
+.inner-banner .btn-custom {
+    background-color: #3CB4CB;
+    color: #ffffff;
+}
+
+.inner-banner .btn-custom:hover {
+    background-color: #16434B;
+}
 /* about */
+.about {
+    top 200px;
+    width: 100%;
+    text-align: center;
+}
+
+.about article h1 {
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+.about article p {
+    text-align: justify;
+}
+
+.about #event {
+    color: #ff3333;
+}
+
+.about #faction {
+    color: #F3A32A;
+}
+
+.about #grade {
+    color: #82BF6E;
+}
 
 
 /* footer/join */
+.footer {
+    background-color: #16434B;
+    
+}
+
+.footer .discord {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 20%
+    
+}
