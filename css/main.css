@@ -1,17 +1,29 @@
 @charset "UTF-8"
 
-    /* font-family: 'choisie', 'sans-serif'; */
+    /* font-family: 'pas encore choisie'+ 'sans-serif'; */
+    
     /* couleur du site
-    bleu foncé  #16434B
-    bleu clair  #3CB4CB
-    vert        #82BF6E
-    jaune       #F3A32A
-    rouge       #ff3333
+    bleu foncé  : #2c3e50
+    bleu clair  : #3498db
+    rouge foncé : #c0392b
+    rouge clair : #e74c3c
+    vert foncé  : #27ae60
+    vert clair  : #27ae60
+    jaune foncé : #f39c12
+    jaune clair : #f1c40f
+    violet foncé: #8e44ad
+    violet clair: #9b59b6
+    https://flatuicolors.com/palette/defo
     */
-
+    
+/*css general*/
 body, html {
-        padding 0;
-        margin 0;
+    padding 0;
+    margin 0;
+}
+
+body {
+    background-color: #2c3e50;
 }
 
 a {
@@ -28,7 +40,7 @@ a:hover {
 
 /* header */
 .header{
-    background-color: #3CB4CB;
+    background-color: #3498db;
     height: 60px;
     line-height: 60px;
 }
@@ -64,8 +76,8 @@ a:hover {
 
 .ban {
     height: 300px; 
-    background-color: #16434B;
 }
+
 .ban img {
     width: 100%;
     max-width: 100%;
@@ -93,40 +105,36 @@ a:hover {
 .inner-banner .btn-custom:hover {
     background-color: #16434B;
 }
+
+.carousel1 {
+    text-align: center;
+}
+
 /* about */
 .about {
-    top 200px;
-    width: 100%;
-    text-align: center;
+    height: 500px;
+    width: 950px;
 }
 
-.about article h1 {
-    text-align: center;
-    padding-bottom: 2%;
+.btn-slide-1:hover {   
+    background: linear-gradient(to right, #2c3e50, transparent);
 }
 
-.about article p {
-    text-align: justify;
+.btn-slide-2:hover {
+    background: linear-gradient(to right, transparent, #2c3e50);
 }
 
-.about #event {
-    color: #ff3333;
+.carousel-inner {
+    height: 500px;
+    width: 950px;
 }
 
-.about #faction {
-    color: #F3A32A;
+.carousel-item img {
+    height: 500px;
+    width: 950px;
+    margin: 0 auto;
 }
-
-.about #grade {
-    color: #82BF6E;
-}
-
-
 /* footer/join */
-.footer {
-    background-color: #16434B;
-}
-
 .footer .discord {
     padding-top: 5%;
     padding-bottom: 5%;
