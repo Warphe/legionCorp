@@ -172,6 +172,7 @@ a:checked {
 /* footer/join */
 .footer .discord {
     padding-top: 10%;
+    padding-bottom: 10%;
 }
 
 .article-discord {
