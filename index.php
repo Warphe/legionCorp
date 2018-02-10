@@ -12,20 +12,21 @@
   <meta name="author" content="Romain Juvigny">
   <meta name="description" content="Page accueil site officiel de legion Corp.">
   <meta name="keywords" content="legion, corp">
-  <title>Accueil</title>
+  <title>Legion Corp.</title>
 
   <!-- css -->
-  <link rel="stylesheet" href="../legionCorp/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../legionCorp/css/index.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
 
   <!-- font -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/faviconMain.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
 
   <!-- script -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="/legionCorp/js/bootstrap.min.js"></script>
-  <script src="/legionCorp/js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 
 </head>
 
@@ -34,22 +35,12 @@
   <!-- header -->
   <header class="container-fluid header">
     <div class="container">
-      <a class="logo" href="#">Légion Corp.</a>
+      <a class="logo" href="index.php">Légion Corp.</a>
     </div>
     <nav class="menu">
-      <a href="#">Accueil</a>
-      <a href="#faction">Les factions</a>
-      <a href="/legionCorp/zzz.html">à propos</a>
-      <div class="btn-group">
-        <button type="button" class="btn btn-custom-header-secret dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          (-_(-_-)_-)
-        </button>
-        <div class="dropdown-menu div-custom-header-secret">
-          <a class="dropdown-item a-custom-header-secret" href="/legionCorp/zzz.html">ZZZ.HTML.1</a>
-          <a class="dropdown-item a-custom-header-secret" href="/legionCorp/zzz.php">ZZZ.PHP.2</a>
-          <a class="dropdown-item a-custom-header-secret" href="http://gifctrl.com/">NOPE.8</a>
-        </div>
-      </div>
+      <a href="connexion.php">Accueil</a>
+      <a href="faction.php">Les factions</a>
+      <a href="zzz.html">à propos</a>
     </nav>
   </header>
   <!-- end header -->
@@ -60,7 +51,7 @@
     </div>
     <div class="inner-banner">
       <h1>Bienvenue sur le site de Légion Corp.</h1>
-      <button class="btn btn-custom">Nous rejoindre</button>
+      <a class="btn btn-custom" href="inscription.php">Nous rejoindre</a>
     </div>
   </section>
   <!-- end banner -->
@@ -100,22 +91,39 @@
       </div>
     </div>
   </div>
+  <p class="about-phone">
+    Ouvre ce site sur un ordinateur pour voir les articles à la une !
+  </p>
   <!-- end about -->
 
   <!-- footer/join -->
   <footer class="container-fluid footer">
     <div class="container">
       <div class="row discord">
-        <article class="col-md-12 col-lg-6 col-xs-12 col-sm-12">
+        <article class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
           <iframe  src="https://discordapp.com/widget?id=323540196551557122&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" class></iframe>
         </article>
         <article class="article-discord col-md-6 col-lg-6 col-xs-12 col-sm-12">
-          <h1>
-            Rejoins le discord !
-          </h1>
-          <p>
-            Rejoins notre discord pour être informer le plus rapidement possible des nouveautés, jouer avec la communauté, participer aux événements et à la "vie" du serveur !
-          </p>
+          <div class="container">
+            <h1>
+              Rejoins le discord !
+            </h1>
+            <p>
+              Rejoins notre discord pour être informer le plus rapidement possible des nouveautés, jouer avec la communauté, participer aux événements et à la "vie" du serveur !
+            </p>
+          </div>
+          <div class="container">
+            <div class="btn-group">
+              <button type="button" class="btn btn-custom-header-secret dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                (-_(-_-)_-)
+              </button>
+              <div class="dropdown-menu div-custom-header-secret">
+                <a class="dropdown-item a-custom-header-secret" href="zzz.html">ZZZ.HTML.1</a>
+                <a class="dropdown-item a-custom-header-secret" href="zzz.php">ZZZ.PHP.2</a>
+                <a class="dropdown-item a-custom-header-secret" href="http://gifctrl.com/">NOPE.8</a>
+              </div>
+            </div>
+          </div>
         </article>
       </div>
     </div>

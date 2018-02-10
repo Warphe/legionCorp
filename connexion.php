@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=legioncorp', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=legioncorp', 'root', 'Romjuv02-');
 
 if(isset($_POST['form_connexion']))
 {
@@ -37,11 +37,12 @@ if(isset($_POST['form_connexion']))
   <meta name="author" content="Romain Juvigny">
   <meta name="description" content="Page de connexion site officiel de legion Corp.">
   <meta name="keywords" content="legion, corp">
-  <title>Connexion</title>
+  <title>Legion Corp.</title>
 
   <!-- css -->
-  <link rel="stylesheet" href="../legionCorp/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../legionCorp/css/main.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/inscription.css">
 
   <!-- font -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -49,25 +50,40 @@ if(isset($_POST['form_connexion']))
   <!-- script -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="/legionCorp/js/bootstrap.min.js"></script>
-  <script src="/legionCorp/js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 
 </head>
-<body>
-  <h2>Connexion</h2>
-  <form class="" action="" method="post">
-    <input type="text" name="membre_pseudo_connect" value="" placeholder="pseudo">
-    <input type="password" name="membre_mdp_connect" value="" placeholder="mot de passe">
-    <input type="submit" name="form_connexion" value="Se connecter">
-  </form>
-  <?php
-  if(isset($error))
-  {
-    echo $error;
-    ?>
-    <p>pas encore de compte ? <a href="inscription.php">Clique ici</a> pour t'inscrire !</p>
+<body class="text-center">
+  <!-- header -->
+  <header class="container-fluid header">
+    <div class="container">
+      <a class="logo" href="index.php">Légion Corp.</a>
+    </div>
+    <nav class="menu">
+      <a href="connexion.php">Accueil</a>
+      <a href="faction.php">Les factions</a>
+      <a href="zzz.html">à propos</a>
+    </nav>
+  </header>
+  <!-- end header -->
+
+  <!-- connexion -->
+  <form class="form-signin" action="" method="post">
+    <h2 class="h3 md-3">Connexion</h2>
+    <input class="form-control form-pack-top" type="text" name="membre_pseudo_connect" value="" placeholder="pseudo">
+    <input class="form-control form-pack-bottom" type="password" name="membre_mdp_connect" value="" placeholder="mot de passe">
+    <input class="btn btn-custom" type="submit" name="form_connexion" value="Se connecter">
+
     <?php
-  }
-  ?>
+    if(isset($error))
+    { ?>
+      <p id="error"> <?php echo $error;?> </p>
+      <p> pas encore de compte ? <a href="inscription.php">Clique ici</a> pour t'inscrire !</p>
+      <?php
+    }
+    ?>
+  </form>
+    <!-- end connexion -->
 </body>
 </html>

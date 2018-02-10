@@ -1,7 +1,7 @@
 <!doctype html>
 <?php
 
-$bdd = new PDO('mysql:host=localhost;dbname=legioncorp', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=legioncorp', 'root', 'Romjuv02-');
 
 if(isset($_POST['form_inscription']))
 {
@@ -18,10 +18,10 @@ if(isset($_POST['form_inscription']))
     $membre_pseudolength = strlen($membre_pseudo);
     if($membre_pseudolength <= 255)
     {
-      $reqemail = $bdd->prepare("SELECT * FROM membre WHERE membre_email = ?");
-      $reqemail->execute(array($membre_email));
-      $emailexist = $reqemail->rowCount();
-      if($emailexist == 0)
+      $reqpseudo = $bdd->prepare("SELECT * FROM membre WHERE membre_pseudo = ?");
+      $reqpseudo->execute(array($membre_pseudo));
+      $pseudoexist = $reqpseudo->rowCount();
+      if($pseudoexist == 0)
       {
         $membre_emaillength = strlen($membre_email);
         if($membre_emaillength <= 255)
@@ -102,7 +102,7 @@ if(isset($_POST['form_inscription']))
   }
   else
   {
-    $error = "Tout les champs obligatoires doivent être complétés !";
+    $error = "Tout les champs doivent être complétés !";
   }
 }
 
@@ -114,11 +114,12 @@ if(isset($_POST['form_inscription']))
   <meta name="author" content="Romain Juvigny">
   <meta name="description" content="Page d'inscription site officiel de legion Corp.">
   <meta name="keywords" content="legion, corp">
-  <title>Inscription</title>
+  <title>Legion Corp.</title>
 
   <!-- css -->
-  <link rel="stylesheet" href="../legionCorp/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../legionCorp/css/main.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/inscription.css">
 
   <!-- font -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -126,42 +127,51 @@ if(isset($_POST['form_inscription']))
   <!-- script -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="/legionCorp/js/bootstrap.min.js"></script>
-  <script src="/legionCorp/js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 
 </head>
-<body>
-  <h3>inscription</h3>
-  <form class="" action="" method="post">
-    <label for="membre_pseudo">Pseudo :</label>
-    <input type="text" name="membre_pseudo" value="<?php if(isset($membre_pseudo)){echo "$membre_pseudo";} ?>" placeholder="Pseudo" id="membre_pseudo">
-    <br/>
-    <label for="membre_email">Email :</label>
-    <input type="email" name="membre_email" value="<?php if(isset($membre_email)){echo "$membre_email";} ?>" placeholder="Email" id="membre_email">
-    <br/>
-    <label for="membre_email2">Confirmé votre email :</label>
-    <input type="email" name="membre_email2" value="<?php if(isset($membre_email2)){echo "$membre_email2";} ?>" placeholder="Confirmation de votre email" id="membre_email2">
-    <br/>
-    <label for="membre_nom">Nom de votre légionnaire :</label>
-    <input type="text" name="membre_nom" value="<?php if(isset($membre_nom)){echo "$membre_nom";} ?>" placeholder="Nom" id="membre_nom">
-    <br/>
-    <label for="membre_prenom">Prenom de votre légionnaire :</label>
-    <input type="text" name="membre_prenom" value="<?php if(isset($membre_prenom)){echo "$membre_prenom";} ?>" placeholder="Prenom" id="membre_prenom">
-    <br/>
-    <label for="membre_mdp">Votre mot de passe :</label>
-    <input type="password" name="membre_mdp" value="" placeholder="Mot de passe" id="membre_mdp">
-    <br/>
-    <label for="membre_mdp2">Confirmé votre mot de passe :</label>
-    <input type="password" name="membre_mdp2" value="" placeholder="Confirmation du mot de passe" id="membre_mdp2">
-    <br/>
-    <input type="submit" name="form_inscription" value="Je m'inscris !">
+<body class="text-center">
+  <!-- header -->
+  <header class="container-fluid header">
+    <div class="container">
+      <a class="logo" href="index.php">Légion Corp.</a>
+    </div>
+    <nav class="menu">
+      <a href="connexion.php">Accueil</a>
+      <a href="faction.php">Les factions</a>
+      <a href="zzz.html">à propos</a>
+    </nav>
+  </header>
+  <!-- end header -->
 
+  <!-- form-inscription -->
+  <form class="form-signin" action="" method="post">
+    <h2 class="h3 md-3">Bienvenue, future légionnaire !</h2>
+    <label for="membre_nom" class="sr-only">Nom de votre légionnaire</label>
+    <input type="text" name="membre_nom" class="form-control form-pack-top" value="<?php if(isset($membre_nom)){echo "$membre_nom";} ?>" placeholder="Nom du légionnaire" id="membre_nom" required autofocus>
+    <label for="membre_prenom" class="sr-only">Prenom de votre légionnaire</label>
+    <input type="text" name="membre_prenom" class="form-control form-pack-middle" value="<?php if(isset($membre_prenom)){echo "$membre_prenom";} ?>" placeholder="Prenom du légionnaire" id="membre_prenom" required>
+    <label for="membre_pseudo" class="sr-only">Pseudo</label>
+    <input type="text" name="membre_pseudo" class="form-control form-pack-bottom" value="<?php if(isset($membre_pseudo)){echo "$membre_pseudo";} ?>" placeholder="Pseudo" id="membre_pseudo" required>
+    <label for="membre_email" class="sr-only">Email</label>
+    <input type="email" name="membre_email" class="form-control form-pack-top" value="<?php if(isset($membre_email)){echo "$membre_email";} ?>" placeholder="Email" id="membre_email" required>
+    <label for="membre_email2" class="sr-only">Confirmé votre email</label>
+    <input type="email" name="membre_email2" class="form-control form-pack-bottom" value="<?php if(isset($membre_email2)){echo "$membre_email2";} ?>" placeholder="Confirmation de votre email" id="membre_email2" required>
+    <label for="membre_mdp" class="sr-only">Votre mot de passe</label>
+    <input type="password" name="membre_mdp" class="form-control form-pack-top" value="" placeholder="Mot de passe" id="membre_mdp">
+    <label for="membre_mdp2" class="sr-only">Confirmé votre mot de passe</label>
+    <input type="password" name="membre_mdp2" class="form-control form-pack-bottom" value="" placeholder="Confirmation du mot de passe" id="membre_mdp2">
+    <input type="submit" name="form_inscription" value="Je m'inscris !" class="btn btn-custom">
   </form>
-  <?php
-  if(isset($error))
-  {
-    echo $error;
-  }
-  ?>
-</body>
-</html>
+    <?php
+    if (isset($error))
+    {
+      ?>
+      <p id="error">
+        <?php echo $error; ?>
+      </p>
+    <?php } ?>
+    <!--end form-inscription-->
+  </body>
+  </html>
